@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국립 부산기계공업고등학교 | 대한민국 기술 인재의 요람</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              600: '#1e40af',
+              700: '#1d4ed8',
+              800: '#1e3a8a',
+              900: '#0f172a',
+            },
+            accent: {
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans KR', 'sans-serif'],
+            en: ['Rajdhani', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    .hero-bg {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 58, 138, 0.75) 100%), 
+                  url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white min-h-screen flex flex-col">
+
+  <!-- 최상단 서브 정보바 -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="font-medium text-amber-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-award"></i> 교훈: 성실(誠實) · 근면(勤勉) · 정확(正確) · 검소(儉素)
+        </span>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline text-slate-400">국립 마이스터고등학교 (지정 제1호)</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="#notice" class="hover:text-white transition-colors flex items-center gap-1"><i class="fa-solid fa-user"></i> 학생/학부모 로그인</a>
+        <a href="#about" class="hover:text-white transition-colors flex items-center gap-1"><i class="fa-solid fa-graduation-cap"></i> 입학안내</a>
+        <a href="#footer" class="hover:text-white transition-colors flex items-center gap-1"><i class="fa-solid fa-map-pin"></i> 오시는 길</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 메인 헤더 & 네비게이션 -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- 로고 -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 bg-brand-800 text-white rounded-xl flex items-center justify-center font-bold text-2xl shadow-md group-hover:bg-brand-700 transition-all transform group-hover:scale-105">
+            <i class="fa-solid fa-gear animate-spin-slow"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs font-semibold text-brand-700 tracking-wider">국립 마이스터고등학교</span>
+            <span class="text-xl font-black text-slate-900 tracking-tight leading-none group-hover:text-brand-800 transition-colors">
+              부산기계공업고등학교
+            </span>
+            <span class="text-[10px] text-slate-400 font-en tracking-wider uppercase mt-0.5">Busan National Mechanical Technical High School</span>
+          </div>
+        </a>
+
+        <!-- 데스크톱 메뉴 -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a href="#about" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-slate-50 rounded-lg transition-colors">학교소개</a>
+          <a href="#dept" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-slate-50 rounded-lg transition-colors">학과안내</a>
+          <a href="#notice" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-slate-50 rounded-lg transition-colors">학사공지</a>
+          <a href="#meal" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-slate-50 rounded-lg transition-colors">오늘의 급식</a>
+          <a href="#calendar" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-slate-50 rounded-lg transition-colors">학사일정</a>
+          <a href="#gallery" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-slate-50 rounded-lg transition-colors">학교갤러리</a>
+          <a href="#partners" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-slate-50 rounded-lg transition-colors">산학협력</a>
+        </nav>
+
+        <!-- 우측 액션 버튼 & 모바일 토글 -->
+        <div class="flex items-center gap-3">
+          <a href="#about" class="hidden sm:inline-flex items-center gap-2 bg-brand-800 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all shadow-md hover:shadow-lg">
+            <i class="fa-solid fa-paper-plane"></i> 2026 신입생 입학안내
+          </a>
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="메뉴 열기">
+            <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 모바일 네비게이션 드로어 -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2">
+      <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">학교소개</a>
+      <a href="#dept" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">학과안내</a>
+      <a href="#notice" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">학사공지</a>
+      <a href="#meal" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">오늘의 급식</a>
+      <a href="#calendar" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">학사일정</a>
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">학교갤러리</a>
+      <a href="#partners" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">산학협력</a>
+    </div>
+  </header>
+
+  <!-- 메인 히어로 섹션 -->
+  <section class="relative hero-bg min-h-[560px] flex items-center justify-center text-white py-20 px-4">
+    <div class="max-w-5xl mx-auto text-center space-y-6 relative z-10">
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-amber-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        세계 최고의 영마이스터(Young Meister) 육성
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+        정밀 기술의 주역, 미래를 여는<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-blue-200 to-white">
+          국립 부산기계공업고등학교
+        </span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+        1967년 설립 이래 대한민국 정밀기계 및 자동화 산업을 이끌어온 1등 마이스터고.<br class="hidden sm:inline">
+        최첨단 실습 인프라와 100% 현장 맞춤형 교육으로 글로벌 명장을 배출합니다.
+      </p>
+
+      <!-- 지표 카운트 하이라이트 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-6 border-t border-white/10">
+        <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-en">98.4%</div>
+          <div class="text-xs text-slate-300 mt-1">최근 취업률 평균</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+          <div class="text-2xl sm:text-3xl font-extrabold text-blue-300 font-en">1,200+</div>
+          <div class="text-xs text-slate-300 mt-1">협력 기업체 네트워크</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-en">100%</div>
+          <div class="text-xs text-slate-300 mt-1">기숙사 수용율</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-300 font-en">1호</div>
+          <div class="text-xs text-slate-300 mt-1">국립 마이스터고 지정</div>
+        </div>
+      </div>
+
+      <div class="pt-4 flex flex-wrap justify-center gap-3">
+        <a href="#dept" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center gap-2">
+          <i class="fa-solid fa-microchip"></i> 학과 소개 보기
+        </a>
+        <a href="#notice" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/30 backdrop-blur-sm transition-all text-sm sm:text-base flex items-center gap-2">
+          <i class="fa-solid fa-bullhorn"></i> 입학 요강 및 소식
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 퀵 서비스 아이콘 메뉴 -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
+      
+      <a href="#notice" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-blue-50/80 transition-all text-center group">
+        <div class="w-12 h-12 bg-blue-100 text-brand-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">학사공지</span>
+      </a>
+
+      <a href="#meal" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-amber-50/80 transition-all text-center group">
+        <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">오늘의 급식</span>
+      </a>
+
+      <a href="#calendar" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-emerald-50/80 transition-all text-center group">
+        <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">학사일정</span>
+      </a>
+
+      <a href="#notice" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-indigo-50/80 transition-all text-center group">
+        <div class="w-12 h-12 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-envelope-open-text"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">가정통신문</span>
+      </a>
+
+      <a href="#dept" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-purple-50/80 transition-all text-center group">
+        <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">입학안내</span>
+      </a>
+
+      <a href="#partners" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-rose-50/80 transition-all text-center group">
+        <div class="w-12 h-12 bg-rose-100 text-rose-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">취업지원센터</span>
+      </a>
+
+      <a href="#gallery" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-cyan-50/80 transition-all text-center group">
+        <div class="w-12 h-12 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-camera font-bold"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">학교갤러리</span>
+      </a>
+
+      <a href="#footer" class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 transition-all text-center group">
+        <div class="w-12 h-12 bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform shadow-sm">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+        <span class="text-xs font-bold text-slate-800">학교 약도</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 전공 학과 안내 섹션 -->
+  <section id="dept" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 섹션 헤더 -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold text-brand-700 tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Departments Overview</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          미래 첨단 산업을 이끌 <span class="text-brand-700">4대 전문 학과</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          최신 최첨단 실습 장비 구축과 현장 연계 특화 교육과정으로 전문가를 양성합니다.
+        </p>
+      </div>
+
+      <!-- 학과 카드 그리드 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 1. 기계시스템과 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl hover:border-brand-300 transition-all duration-300 group">
+          <div>
+            <div class="w-14 h-14 bg-blue-50 text-brand-700 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-700 group-hover:text-white transition-colors shadow-sm">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-700 bg-blue-50 px-2.5 py-1 rounded-md">기계 특화</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-brand-700 transition-colors">기계시스템과</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              CAD/CAM 기반 정밀 설계, 3D 프린팅, CNC 밀링/선반 초정밀 가공 기술과 자동화 정밀 기계 제작 능력을 습득합니다.
+            </p>
+            <div class="space-y-1.5 border-t border-slate-100 pt-4 mb-4">
+              <div class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
+                <i class="fa-solid fa-certificate text-amber-500"></i> 주요 자격증
+              </div>
+              <p class="text-xs text-slate-700 font-medium">컴퓨터응용가공산업기사, 전산응용기계제도기능사, 기계조립기능사</p>
+            </div>
+          </div>
+          <a href="#notice" onclick="openDeptModal('기계시스템과')" class="w-full py-2.5 bg-slate-100 hover:bg-brand-700 hover:text-white text-slate-700 text-xs font-bold rounded-xl text-center transition-colors">
+            학과 상세 보기
+          </a>
+        </div>
+
+        <!-- 2. 스마트팩토리과 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl hover:border-emerald-300 transition-all duration-300 group">
+          <div>
+            <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-sm">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">4차 산업혁명</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-emerald-600 transition-colors">스마트팩토리과</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              산업용 로봇 제어, PLC 자동화 제어, IoT 센서 및 스마트 공정 프로세스 네트워크 통합 구축 기술을 전문적으로 배웁니다.
+            </p>
+            <div class="space-y-1.5 border-t border-slate-100 pt-4 mb-4">
+              <div class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
+                <i class="fa-solid fa-certificate text-amber-500"></i> 주요 자격증
+              </div>
+              <p class="text-xs text-slate-700 font-medium">생산자동화기능사, 공유압기능사, 정보처리기능사, 로봇제어자격</p>
+            </div>
+          </div>
+          <a href="#notice" onclick="openDeptModal('스마트팩토리과')" class="w-full py-2.5 bg-slate-100 hover:bg-emerald-600 hover:text-white text-slate-700 text-xs font-bold rounded-xl text-center transition-colors">
+            학과 상세 보기
+          </a>
+        </div>
+
+        <!-- 3. 전기과 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl hover:border-amber-300 transition-all duration-300 group">
+          <div>
+            <div class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors shadow-sm">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">에너지·전력</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-amber-600 transition-colors">전기과</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              전력 계통 제어, 신재생 에너지 설비, 내선 공사, 전기기기 운용 및 자동제어 시스템 전문가를 양성합니다.
+            </p>
+            <div class="space-y-1.5 border-t border-slate-100 pt-4 mb-4">
+              <div class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
+                <i class="fa-solid fa-certificate text-amber-500"></i> 주요 자격증
+              </div>
+              <p class="text-xs text-slate-700 font-medium">전기기능사, 승강기기능사, 전력제어운용자격, 전기공사산업기사</p>
+            </div>
+          </div>
+          <a href="#notice" onclick="openDeptModal('전기과')" class="w-full py-2.5 bg-slate-100 hover:bg-amber-600 hover:text-white text-slate-700 text-xs font-bold rounded-xl text-center transition-colors">
+            학과 상세 보기
+          </a>
+        </div>
+
+        <!-- 4. 설비시스템과 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl hover:border-indigo-300 transition-all duration-300 group">
+          <div>
+            <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors shadow-sm">
+              <i class="fa-solid fa-wrench"></i>
+            </div>
+            <span class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-md">플랜트·HVAC</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-indigo-600 transition-colors">설비시스템과</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              HVAC 공조냉동, 산업 플랜트 배관, 친환경 에너지 관리 및 스마트 빌딩 설비 시스템 진단 전문가 교육.
+            </p>
+            <div class="space-y-1.5 border-t border-slate-100 pt-4 mb-4">
+              <div class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
+                <i class="fa-solid fa-certificate text-amber-500"></i> 주요 자격증
+              </div>
+              <p class="text-xs text-slate-700 font-medium">공조냉동기계기능사, 에너지관리기능사, 가스기능사, 배관기능사</p>
+            </div>
+          </div>
+          <a href="#notice" onclick="openDeptModal('설비시스템과')" class="w-full py-2.5 bg-slate-100 hover:bg-indigo-600 hover:text-white text-slate-700 text-xs font-bold rounded-xl text-center transition-colors">
+            학과 상세 보기
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 학사공지 & 오늘의 급식 섹션 (그리드 2열) -->
+  <section id="notice" class="py-20 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- 좌측: 게시판 (8열) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+            <div>
+              <span class="text-xs font-extrabold text-brand-700 uppercase tracking-wider">Communication Hub</span>
+              <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mt-0.5">
+                <i class="fa-solid fa-clipboard-list text-brand-700"></i> 학사 공지사항
+              </h3>
+            </div>
+            
+            <!-- 필터 탭 -->
+            <div class="flex bg-slate-100 p-1 rounded-xl text-xs font-semibold" id="tabContainer">
+              <button onclick="filterNotice('all')" class="tab-btn active px-3 py-1.5 rounded-lg bg-white shadow-sm text-brand-700">전체</button>
+              <button onclick="filterNotice('notice')" class="tab-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900">공지</button>
+              <button onclick="filterNotice('letter')" class="tab-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900">가정통신문</button>
+              <button onclick="filterNotice('job')" class="tab-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900">취업/진로</button>
+            </div>
+          </div>
+
+          <!-- 공지 목록 -->
+          <div class="divide-y divide-slate-100" id="noticeList">
+            
+            <!-- Item 1 -->
+            <div class="notice-item notice group p-3.5 hover:bg-slate-50 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-4"
+                 onclick="openNoticeModal('2026학년도 신입생 입학전형 요강 및 제출서류 양식 안내', '2026학년도 국립 부산기계공업고등학교 신입생 입학전형 요강을 다음과 같이 안내합니다.\n\n1. 원서접수: 2026년 10월 13일(월) ~ 10월 16일(목)\n2. 모집 학과: 기계시스템과, 스마트팩토리과, 전기과, 설비시스템과\n3. 제출 서류: 입학원서, 생활기록부 복사본, 추천서 등\n\n자세한 사항은 첨부파일을 확인해주시기 바랍니다.', '2026-09-28', '공지')">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="px-2.5 py-1 bg-blue-100 text-brand-800 text-[11px] font-bold rounded-md shrink-0">공지</span>
+                <span class="text-sm font-medium text-slate-800 group-hover:text-brand-700 truncate transition-colors">
+                  [입학] 2026학년도 신입생 입학전형 요강 및 제출서류 양식 안내
+                </span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0 text-xs text-slate-400">
+                <span>2026-09-28</span>
+                <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="notice-item job group p-3.5 hover:bg-slate-50 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-4"
+                 onclick="openNoticeModal('2026년도 하반기 삼성전자/삼성디스플레이 영마이스터 채용 공고', '본교 3학년 재학생 대상 삼성 그룹 영마이스터 특별 채용이 시작됩니다.\n\n- 대상: 3학년 전공 이수 예정자\n- 추천 인원: 학과별 상위 10%\n- 서류 접수 기한: 2026년 10월 10일 17:00까지\n- 문의: 취업지원센터 (051-740-1250)', '2026-09-26', '취업')">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="px-2.5 py-1 bg-amber-100 text-amber-800 text-[11px] font-bold rounded-md shrink-0">취업</span>
+                <span class="text-sm font-medium text-slate-800 group-hover:text-brand-700 truncate transition-colors">
+                  [취업] 2026년도 하반기 삼성전자/삼성디스플레이 영마이스터 채용 공고
+                </span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0 text-xs text-slate-400">
+                <span>2026-09-26</span>
+                <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="notice-item letter group p-3.5 hover:bg-slate-50 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-4"
+                 onclick="openNoticeModal('10월 학부모 총회 및 교육과정 설명회 개최 안내', '학부모님의 건승과 가정의 평안을 기원합니다.\n\n2026학년도 2학기 학부모 총회 및 마이스터 교육과정 설명회를 다음과 같이 개최하오니 많은 참석 부탁드립니다.\n\n- 일시: 2026년 10월 15일(수) 14:00\n- 장소: 본관 3층 시청각실\n- 안건: 2학기 주요 교육 활동 보고 및 진로 컨설팅', '2026-09-25', '통신문')">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-bold rounded-md shrink-0">통신문</span>
+                <span class="text-sm font-medium text-slate-800 group-hover:text-brand-700 truncate transition-colors">
+                  [가정통신문] 10월 학부모 총회 및 교육과정 설명회 개최 안내
+                </span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0 text-xs text-slate-400">
+                <span>2026-09-25</span>
+                <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="notice-item notice group p-3.5 hover:bg-slate-50 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-4"
+                 onclick="openNoticeModal('제61회 전국기능경기대회 금메달 3개, 은메달 4개 입상 소식', '본교 학생들이 제61회 전국기능경기대회에서 최고의 기량을 발휘하여 압도적인 성적으로 입상하였습니다.\n\n- CNC밀링 분야: 금메달 (기계3 김O훈)\n- 로봇제어 분야: 금메달 (스마트3 이O민)\n- 전기제어 분야: 금메달 (전기3 박O준)\n\n선수단 및 지도교사 여러분의 노고에 깊이 감사드립니다.', '2026-09-21', '공지')">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="px-2.5 py-1 bg-blue-100 text-brand-800 text-[11px] font-bold rounded-md shrink-0">공지</span>
+                <span class="text-sm font-medium text-slate-800 group-hover:text-brand-700 truncate transition-colors">
+                  [경축] 제61회 전국기능경기대회 금메달 3개, 은메달 4개 입상 소식
+                </span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0 text-xs text-slate-400">
+                <span>2026-09-21</span>
+                <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="notice-item letter group p-3.5 hover:bg-slate-50 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-4"
+                 onclick="openNoticeModal('2학기 산학일체형 현장실습 사전 안전보건교육 실시 안내', '3학년 산학일체형 현장실습 참여 학생을 대상으로 안전보건 교육 및 수당 지급 안내 가정통신문입니다.\n\n실습 전 개인 보호구 착용 및 안전수칙 준수 필수 교육을 이수하여 주시기 바랍니다.', '2026-09-18', '통신문')">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-bold rounded-md shrink-0">통신문</span>
+                <span class="text-sm font-medium text-slate-800 group-hover:text-brand-700 truncate transition-colors">
+                  [가정통신문] 2학기 산학일체형 현장실습 사전 안전보건교육 실시 안내
+                </span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0 text-xs text-slate-400">
+                <span>2026-09-18</span>
+                <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 우측: 오늘의 급식 카드 (5열) -->
+        <div id="meal" class="lg:col-span-5 bg-gradient-to-br from-amber-500/10 via-amber-50/40 to-slate-50 border border-amber-200/80 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center justify-between border-b border-amber-200 pb-4 mb-4">
+              <div>
+                <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Nutrition & Health</span>
+                <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mt-0.5">
+                  <i class="fa-solid fa-utensils text-amber-600"></i> 오늘의 급식
+                </h3>
+              </div>
+              
+              <!-- 중식/석식 토글 -->
+              <div class="bg-amber-100 p-1 rounded-xl text-xs font-bold flex gap-1">
+                <button id="lunchBtn" onclick="switchMeal('lunch')" class="px-3 py-1.5 rounded-lg bg-amber-600 text-white shadow-sm transition-all">중식</button>
+                <button id="dinnerBtn" onclick="switchMeal('dinner')" class="px-3 py-1.5 rounded-lg text-amber-900 hover:bg-amber-200/60 transition-all">석식</button>
+              </div>
+            </div>
+
+            <!-- 날짜 바 -->
+            <div class="flex items-center justify-between text-xs font-semibold text-amber-900 bg-amber-100/70 px-3.5 py-2 rounded-xl mb-4">
+              <span id="mealDateDisplay"><i class="fa-regular fa-calendar"></i> 2026년 9월 30일 (수)</span>
+              <span class="bg-amber-200 text-amber-900 px-2 py-0.5 rounded text-[10px]" id="mealTypeBadge">중식 메뉴</span>
+            </div>
+
+            <!-- 식단 목록 -->
+            <ul id="mealMenuList" class="space-y-2.5 text-sm font-medium text-slate-800 my-4 pl-2">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 text-xs"></i> 찰보리밥</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 text-xs"></i> 한우 차돌박이 된장찌개</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 text-xs"></i> 수제 둔전식 돼지갈비찜</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 text-xs"></i> 오징어 어묵무침</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 text-xs"></i> 깍두기 / 쌈채소</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 text-xs"></i> 샤인머스캣 과일푸딩</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-amber-200/80 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2">
+            <span class="flex items-center gap-1 font-bold text-amber-800">
+              <i class="fa-solid fa-fire text-amber-600"></i> 열량: <span id="mealCalorie">825 kcal</span>
+            </span>
+            <span class="text-[11px] text-slate-500">원산지: 쌀(국산), 돼지고기(국산), 한우(국산)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 학사 일정 섹션 -->
+  <section id="calendar" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-2">
+        <span class="text-xs font-extrabold text-brand-700 tracking-wider uppercase">Academic Schedule</span>
+        <h2 class="text-3xl font-extrabold text-slate-900">주요 학사 일정</h2>
+        <p class="text-xs sm:text-sm text-slate-600">2026학년도 2학기 주요 교육 및 연간 계획</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            <span class="text-lg font-bold text-brand-800">10월 학사일정</span>
+            <span class="px-2.5 py-1 bg-blue-50 text-brand-700 text-xs font-bold rounded-lg">OCTOBER</span>
+          </div>
+          <ul class="space-y-3 text-xs">
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-amber-600 shrink-0 w-12">10.03(목)</span>
+              <span class="text-slate-700 font-medium">개천절 (공휴일)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-brand-700 shrink-0 w-12">10.09(수)</span>
+              <span class="text-slate-700 font-medium">한글날 (공휴일)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-brand-700 shrink-0 w-12">10.13(월)</span>
+              <span class="text-slate-700 font-medium">2026 신입생 원서 접수 시작</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-emerald-600 shrink-0 w-12">10.20(화)</span>
+              <span class="text-slate-700 font-medium">2학기 중간고사 (10.20 ~ 10.23)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            <span class="text-lg font-bold text-brand-800">11월 학사일정</span>
+            <span class="px-2.5 py-1 bg-blue-50 text-brand-700 text-xs font-bold rounded-lg">NOVEMBER</span>
+          </div>
+          <ul class="space-y-3 text-xs">
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-brand-700 shrink-0 w-12">11.06(금)</span>
+              <span class="text-slate-700 font-medium">2026 신입생 면접 및 실기고사</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-amber-600 shrink-0 w-12">11.13(목)</span>
+              <span class="text-slate-700 font-medium">신입생 합격자 발표</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-emerald-600 shrink-0 w-12">11.20(금)</span>
+              <span class="text-slate-700 font-medium">전공 작품 전시회 & 마이스터 페스티벌</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            <span class="text-lg font-bold text-brand-800">12월 학사일정</span>
+            <span class="px-2.5 py-1 bg-blue-50 text-brand-700 text-xs font-bold rounded-lg">DECEMBER</span>
+          </div>
+          <ul class="space-y-3 text-xs">
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-brand-700 shrink-0 w-12">12.10(목)</span>
+              <span class="text-slate-700 font-medium">2학기 기말고사 (12.10 ~ 12.15)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-amber-600 shrink-0 w-12">12.25(금)</span>
+              <span class="text-slate-700 font-medium">성탄절 (공휴일)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-bold text-emerald-600 shrink-0 w-12">12.31(목)</span>
+              <span class="text-slate-700 font-medium">2026학년도 동계 방학식</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 학교 갤러리 섹션 -->
+  <section id="gallery" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-extrabold text-brand-700 tracking-wider uppercase">Photo Gallery</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-1">생생한 학교 현장</h2>
+        </div>
+        <p class="text-xs text-slate-500 max-w-md">
+          학생들의 실습 열정과 다채로운 교내 활동 현장을 사진으로 확인하세요.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Gallery Card 1 -->
+        <div class="group relative bg-slate-900 rounded-2xl overflow-hidden aspect-[4/3] shadow-md cursor-pointer" onclick="openGalleryModal('최첨단 CNC 정밀가공 실습', '기계시스템과 학생들이 5축 가공기 및 CNC 밀링 실습을 진행하고 있습니다.')">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="실습현장" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+            <span class="text-[10px] font-bold bg-amber-500 text-slate-950 px-2 py-0.5 rounded">실습 현장</span>
+            <h4 class="text-sm font-bold mt-1 group-hover:text-amber-300 transition-colors">최첨단 CNC 정밀가공 실습</h4>
+          </div>
+        </div>
+
+        <!-- Gallery Card 2 -->
+        <div class="group relative bg-slate-900 rounded-2xl overflow-hidden aspect-[4/3] shadow-md cursor-pointer" onclick="openGalleryModal('전국기능경기대회 시상식', '제61회 전국기능경기대회에서 금메달을 수상한 학생 선수단 연마 현장.')">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="기능경기대회" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+            <span class="text-[10px] font-bold bg-blue-500 text-white px-2 py-0.5 rounded">대회 수상</span>
+            <h4 class="text-sm font-bold mt-1 group-hover:text-amber-300 transition-colors">전국기능경기대회 영예의 수상</h4>
+          </div>
+        </div>
+
+        <!-- Gallery Card 3 -->
+        <div class="group relative bg-slate-900 rounded-2xl overflow-hidden aspect-[4/3] shadow-md cursor-pointer" onclick="openGalleryModal('스마트팩토리 로봇 제어 교육', '산업용 다축 로봇 팔의 동역학 및 PLC 제어 실습 장면.')">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="로봇 제어" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+            <span class="text-[10px] font-bold bg-emerald-500 text-white px-2 py-0.5 rounded">스마트 공정</span>
+            <h4 class="text-sm font-bold mt-1 group-hover:text-amber-300 transition-colors">스마트팩토리 로봇 제어 교육</h4>
+          </div>
+        </div>
+
+        <!-- Gallery Card 4 -->
+        <div class="group relative bg-slate-900 rounded-2xl overflow-hidden aspect-[4/3] shadow-md cursor-pointer" onclick="openGalleryModal('교내 체육한마당 축제', '전교생이 함께 우정을 나누는 2026 체육대회 현장.')">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80" alt="체육대회" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+            <span class="text-[10px] font-bold bg-indigo-500 text-white px-2 py-0.5 rounded">학교 행사</span>
+            <h4 class="text-sm font-bold mt-1 group-hover:text-amber-300 transition-colors">교내 체육한마당 축제</h4>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 산학 협력 대표 기업 섹션 -->
+  <section id="partners" class="py-16 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="text-xs font-extrabold text-slate-500 uppercase tracking-widest">Industry Partnerships</span>
+        <h3 class="text-xl font-bold text-slate-800 mt-1">부산기계공업고등학교 주요 협력 대기업 & 공기업</h3>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
+        <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-slate-700 text-sm shadow-sm flex items-center justify-center h-16 hover:border-brand-600 transition-colors">
+          삼성전자
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-slate-700 text-sm shadow-sm flex items-center justify-center h-16 hover:border-brand-600 transition-colors">
+          현대자동차
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-slate-700 text-sm shadow-sm flex items-center justify-center h-16 hover:border-brand-600 transition-colors">
+          POSCO
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-slate-700 text-sm shadow-sm flex items-center justify-center h-16 hover:border-brand-600 transition-colors">
+          한국전력공사
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-slate-700 text-sm shadow-sm flex items-center justify-center h-16 hover:border-brand-600 transition-colors">
+          한화에어로스페이스
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-slate-700 text-sm shadow-sm flex items-center justify-center h-16 hover:border-brand-600 transition-colors">
+          두산에너빌리티
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 영역 -->
+  <footer id="footer" class="bg-slate-900 text-slate-400 mt-auto border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <!-- 학교 주소 및 정보 (7열) -->
+        <div class="md:col-span-7 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-700 text-white rounded-lg flex items-center justify-center font-bold text-xl">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white">국립 부산기계공업고등학교</h4>
+              <p class="text-[11px] text-slate-500 font-en">Busan National Mechanical Technical High School</p>
+            </div>
+          </div>
+
+          <div class="space-y-1.5 text-slate-300 leading-relaxed pt-2">
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-amber-500 w-4"></i>
+              (48059) 부산광역시 해운대구 해운대로 569 (우동)
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-amber-500 w-4"></i>
+              교무실: 051-740-1200 &nbsp;|&nbsp; 행정실: 051-740-1204 &nbsp;|&nbsp; 취업지원센터: 051-740-1250
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-fax text-amber-500 w-4"></i>
+              팩스: 051-740-1299 (교무실) / 051-740-1209 (행정실)
+            </p>
+          </div>
+        </div>
+
+        <!-- 빠른 링크 & 관련 기관 (5열) -->
+        <div class="md:col-span-5 grid grid-cols-2 gap-4">
+          <div>
+            <h5 class="text-sm font-bold text-white mb-3 border-b border-slate-800 pb-2">주요 바로가기</h5>
+            <ul class="space-y-2">
+              <li><a href="#about" class="hover:text-white transition-colors">학교 소개</a></li>
+              <li><a href="#dept" class="hover:text-white transition-colors">전공 학과 안내</a></li>
+              <li><a href="#notice" class="hover:text-white transition-colors">학사 공지사항</a></li>
+              <li><a href="#meal" class="hover:text-white transition-colors">오늘의 급식표</a></li>
+              <li><a href="#calendar" class="hover:text-white transition-colors">학사 일정</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-sm font-bold text-white mb-3 border-b border-slate-800 pb-2">관련 기관 사이트</h5>
+            <ul class="space-y-2">
+              <li><a href="https://www.moe.go.kr" target="_blank" class="hover:text-white transition-colors">교육부</a></li>
+              <li><a href="https://www.pen.go.kr" target="_blank" class="hover:text-white transition-colors">부산광역시교육청</a></li>
+              <li><a href="https://www.meister.go.kr" target="_blank" class="hover:text-white transition-colors">마이스터고 포털</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">학교생활기록부 독서포털</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
+        <div class="flex gap-4">
+          <a href="#" class="text-amber-400 font-bold hover:underline">개인정보처리방침</a>
+          <span>|</span>
+          <a href="#" class="hover:text-slate-300">영상정보처리기기 운영방침</a>
+          <span>|</span>
+          <a href="#" class="hover:text-slate-300">저작권보호정책</a>
+        </div>
+        <p>&copy; 2026 Busan National Mechanical Technical High School. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 모달 팝업 컴포넌트 -->
+  <div id="modalOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 transform transition-all relative space-y-4">
+      
+      <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="flex items-center gap-2">
+        <span id="modalBadge" class="px-2.5 py-1 bg-brand-100 text-brand-800 text-xs font-bold rounded-md">
+          공지
+        </span>
+        <span id="modalDate" class="text-xs text-slate-400">2026-09-28</span>
+      </div>
+
+      <h3 id="modalTitle" class="text-xl font-bold text-slate-900 leading-snug">
+        공지사항 제목
+      </h3>
+
+      <div class="border-t border-slate-100 pt-3">
+        <div id="modalContent" class="text-sm text-slate-700 leading-relaxed whitespace-pre-line max-h-60 overflow-y-auto custom-scrollbar">
+          상세 내용이 표시됩니다.
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-colors">
+          확인 / 닫기
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 1. 모바일 메뉴 토글
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        icon.className = 'fa-solid fa-bars text-xl';
+      } else {
+        icon.className = 'fa-solid fa-xmark text-xl';
+      }
+    }
+
+    // 2. 공지사항 카테고리 필터링
+    function filterNotice(category) {
+      const items = document.querySelectorAll('.notice-item');
+      const tabs = document.querySelectorAll('.tab-btn');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('active', 'bg-white', 'shadow-sm', 'text-brand-700');
+        tab.classList.add('text-slate-600');
+      });
+
+      event.target.classList.add('active', 'bg-white', 'shadow-sm', 'text-brand-700');
+      event.target.classList.remove('text-slate-600');
+
+      items.forEach(item => {
+        if (category === 'all') {
+          item.style.display = 'flex';
+        } else if (item.classList.contains(category)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // 3. 오늘의 급식 (중식/석식 데이터 스위칭)
+    const mealData = {
+      lunch: {
+        type: '중식 메뉴',
+        calorie: '825 kcal',
+        menu: [
+          '찰보리밥',
+          '한우 차돌박이 된장찌개',
+          '수제 둔전식 돼지갈비찜',
+          '오징어 어묵무침',
+          '깍두기 / 쌈채소',
+          '샤인머스캣 과일푸딩'
+        ]
+      },
+      dinner: {
+        type: '석식 메뉴',
+        calorie: '760 kcal',
+        menu: [
+          '발아현미밥',
+          '맑은 콩나물국',
+          '데리야끼 수제 닭다리구이',
+          '해물 볶음우동',
+          '포기김치',
+          '유기농 농장 사과즙'
+        ]
+      }
+    };
+
+    function switchMeal(type) {
+      const lunchBtn = document.getElementById('lunchBtn');
+      const dinnerBtn = document.getElementById('dinnerBtn');
+      const menuList = document.getElementById('mealMenuList');
+      const typeBadge = document.getElementById('mealTypeBadge');
+      const calorie = document.getElementById('mealCalorie');
+
+      if (type === 'lunch') {
+        lunchBtn.className = 'px-3 py-1.5 rounded-lg bg-amber-600 text-white shadow-sm transition-all';
+        dinnerBtn.className = 'px-3 py-1.5 rounded-lg text-amber-900 hover:bg-amber-200/60 transition-all';
+      } else {
+        dinnerBtn.className = 'px-3 py-1.5 rounded-lg bg-amber-600 text-white shadow-sm transition-all';
+        lunchBtn.className = 'px-3 py-1.5 rounded-lg text-amber-900 hover:bg-amber-200/60 transition-all';
+      }
+
+      const data = mealData[type];
+      typeBadge.textContent = data.type;
+      calorie.textContent = data.calorie;
+
+      menuList.innerHTML = data.menu.map(item => `
+        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 text-xs"></i> ${item}</li>
+      `).join('');
+    }
+
+    // 4. 모달창 열기 및 닫기
+    function openNoticeModal(title, content, date, badgeText) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalContent').textContent = content;
+      document.getElementById('modalDate').textContent = date;
+      document.getElementById('modalBadge').textContent = badgeText;
+      document.getElementById('modalOverlay').classList.remove('hidden');
+    }
+
+    function openDeptModal(deptName) {
+      const deptDetails = {
+        '기계시스템과': '기계시스템과는 초정밀 CAD/CAM 시스템과 3D 설계, CNC 가공 기계를 다루는 대한민국 최고 수준의 기계 명장 양성 학과입니다.\n\n주요 수업: 전산응용기계제도, CNC밀링가공, 3D프린터운용, 정밀측정\n진로: 삼성전자, 현대자동차, POSCO, 한국전력공사 등',
+        '스마트팩토리과': '스마트팩토리과는 4차 산업혁명의 핵심인 로봇 자동화, PLC 제어, IoT 센서 시스템을 설계하고 운영하는 영마이스터 양성 학과입니다.\n\n주요 수업: 로봇응용제어, PLC실습, 자동화시스템, 생산정보시스템\n진로: 반도체 및 디스플레이 자동화 라인, 로봇 전문기업 등',
+        '전기과': '전기과는 신재생 에너지, 전력 네트워크 제어, 내선 공사 및 전력 기기 운용 기술을 교육하는 전통과 권위의 학과입니다.\n\n주요 수업: 전기기기, 전력제어, 전기설비공사, 자동제어실습\n진로: 한국전력공사, 발전 자회사, 대기업 설비팀 등',
+        '설비시스템과': '설비시스템과는 공조냉동, 플랜트 배관, 에너지 효율 진단 및 친환경 건축 설비를 다루는 핵심 엔지니어링 학과입니다.\n\n주요 수업: 공조냉동기계, 배관공학, 에너지관리, 가스설비\n진로: 한국가스공사, 지역난방공사, 플랜트 전문 기업 등'
+      };
+
+      openNoticeModal(`[학과안내] ${deptName}`, deptDetails[deptName] || '학과 정보입니다.', '2026학년도', '학과소개');
+    }
+
+    function openGalleryModal(title, desc) {
+      openNoticeModal(`[갤러리] ${title}`, desc, '2026년 사진', '갤러리');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.add('hidden');
+    }
+
+    // 모달 배경 클릭 시 닫기
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
